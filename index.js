@@ -25,7 +25,7 @@ function setDate() {
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
     // console.log('hours:,hours);
 
-    const timeString = formatHour(hours) + ":" + addZero(mins) + ":" + addZero(seconds) + ' ' + getTimePeriod();
+    const timeString = formatHour(hours) + ":" + addZero(mins) + ":" + addZero(seconds) + ' ' + getTimePeriod(hours);
     displayDate.innerHTML = "Current time: " + timeString;
 }
 
@@ -53,6 +53,6 @@ function formatHour(h) {
 }
 
 // get AM or PM
-function getTimePeriod(H) {
-    return (H < 12) ? "AM" : "PM";
+function getTimePeriod(h) {
+    return (h < 12) ? "AM" : "PM";
 }
